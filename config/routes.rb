@@ -1,7 +1,13 @@
 SampleAppUbuntu::Application.routes.draw do
+#  commented this out on 8.3.2011. not sure why its there.
+#  get "sessions/new" 
+
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
   match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

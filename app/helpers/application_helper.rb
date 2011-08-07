@@ -1,9 +1,9 @@
 module ApplicationHelper
 
 # 7.16.2011 - Lesson 5.5 Exercises:
-  def logo
-    base_logo = image_tag("logo.png", :alt => "Sample App", :class => "round")
-  end
+#  def logo
+#    base_logo = image_tag("logo.png", :alt => "Sample App", :class # => "round")
+#  end
 
   # Return a title on a per-page basis.
   def title
@@ -13,5 +13,9 @@ module ApplicationHelper
     else
       "#{base_title} | #{@title}"
     end
+  end
+
+  def logo
+    image_tag("logo.png", :alt => "Sample App", :class => "round")
   end
 end
